@@ -1,0 +1,44 @@
+"maths": {
+             "q1": {
+                "question": "What is the email address of student xxx?",
+                "answer": "answer"
+            },
+             "q2": {
+                "question": "What is the CGPA of student xxx in first sem?",
+                "answer": "answer"
+            },
+			 "q3": {
+                "question": "Which of the following two courses Student “bbb” studying",
+				"options": [
+                    "Networking",
+                    "Database",
+                    "Introduction to Programing",
+                    "Seminar"
+                ],
+                "answer": "4"
+            },
+			 "q4": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            },
+			 "q5": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            },
+			 "q6": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            },
+			 "q7": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            },
+			 "q8": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            },
+			 "q9": {
+                "question": "12 - 8 = ?",
+                "answer": "4"
+            }
+        }
