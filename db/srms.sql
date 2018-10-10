@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.8.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 17, 2018 at 10:25 PM
--- Server version: 5.7.21-0ubuntu0.16.04.1
--- PHP Version: 7.0.28-0ubuntu0.16.04.1
+-- Host: 127.0.0.1
+-- Generation Time: Oct 10, 2018 at 02:37 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,21 +25,54 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `studentaccountCombination`
+-- Table structure for table `comment`
 --
 
-CREATE TABLE `studentaccountCombination` (
-  `studentID` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+CREATE TABLE `comment` (
+  `Id` int(11) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `Comment` text NOT NULL,
+  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `studentaccountCombination`
+-- Dumping data for table `comment`
 --
 
-INSERT INTO `studentaccountCombination` (`studentID`, `id`) VALUES
-(1, 5),
-(2, 7);
+INSERT INTO `comment` (`Id`, `Name`, `Comment`, `Date`) VALUES
+(11, 'ephrem', 'testing my comment', '2018-10-08 10:57:54'),
+(14, 'ephrem', 'ahjdsfhjh', '2018-10-08 13:21:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `StudentId` int(11) NOT NULL,
+  `StudentName` varchar(100) NOT NULL,
+  `RollId` varchar(100) NOT NULL,
+  `StudentEmail` varchar(100) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `DOB` varchar(100) NOT NULL,
+  `ClassId` int(11) NOT NULL,
+  `RegDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `Status` int(1) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Gender`, `DOB`, `ClassId`, `RegDate`, `UpdationDate`, `Status`, `username`, `password`) VALUES
+(1, 'Ephrem', '1', 'fstudioceh@gmail.com', 'Male', '1997-04-26', 1, '2018-04-02 14:55:41', '2018-09-26 12:38:04', 1, 'ephrem', 'ephrem'),
+(2, 'Abeni', '2', 'ab3ni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:56:26', NULL, 1, 'abeni', 'abeni'),
+(3, 'Laura', '3', '14ur4@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'laura', 'laura'),
+(4, 'Annar', '4', 'annar@email.com', 'Male', '1997-03-11', 2, '2018-04-02 15:23:17', NULL, 1, 'annar', 'annar');
 
 -- --------------------------------------------------------
 
@@ -86,7 +121,7 @@ CREATE TABLE `tblresult` (
 
 INSERT INTO `tblresult` (`id`, `StudentId`, `ClassId`, `SubjectId`, `marks`, `PostingDate`, `UpdationDate`) VALUES
 (1, 2, 1, 1, 99, '2018-04-02 18:28:31', '2018-04-21 12:56:57'),
-(2, 2, 1, 2, 80, '2018-04-02 18:28:31', NULL),
+(2, 2, 1, 2, 75, '2018-04-02 18:28:31', '2018-10-10 11:25:54'),
 (3, 1, 1, 1, 90, '2018-04-02 18:28:45', NULL),
 (4, 1, 1, 2, 90, '2018-04-02 18:28:45', NULL),
 (5, 3, 1, 1, 100, '2018-04-02 18:29:23', NULL),
@@ -170,14 +205,15 @@ CREATE TABLE `tblsubjects` (
 --
 
 INSERT INTO `tblsubjects` (`id`, `SubjectName`, `SubjectCode`, `Creationdate`, `UpdationDate`) VALUES
-(1, 'Introduction to Programming', 'ITX001', '2018-04-02 17:58:12', '0000-00-00 00:00:00'),
+(1, 'Introduction to Programming', 'ITX001', '2018-04-02 17:58:12', '2018-10-10 11:32:43'),
 (2, 'Network Technology 1', 'ITX002', '2018-04-02 17:58:41', '0000-00-00 00:00:00'),
 (3, 'Network Technology 2', 'ITX003', '2018-04-02 17:58:53', '0000-00-00 00:00:00'),
 (4, 'Network Forensic', 'ITX004', '2018-04-02 17:59:16', '0000-00-00 00:00:00'),
 (5, 'Network Protocol Design', 'ITX005', '2018-04-02 17:59:31', '0000-00-00 00:00:00'),
 (6, 'Web Application Security', 'ITX006', '2018-04-02 18:00:32', '0000-00-00 00:00:00'),
 (7, 'Malware 1', 'ITX007', '2018-04-02 18:00:44', '0000-00-00 00:00:00'),
-(8, 'Malware 2', 'ITX007', '2018-04-02 18:00:54', '0000-00-00 00:00:00');
+(8, 'Malware 2', 'ITX007', '2018-04-02 18:00:54', '0000-00-00 00:00:00'),
+(9, 'Mobile Development', 'ITX020', '2018-10-10 11:35:52', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -197,9 +233,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
-(4, 'admin', 'admin', 'admin'),
+(1, 'admin', 'admin', 'admin'),
+(2, 'teacher', 'teacher', 'teacher'),
 (5, 'student', 'student', 'student'),
-(6, 'teacher', 'teacher', 'teacher'),
 (7, 'student2', 'student2', 'student');
 
 --
@@ -207,11 +243,10 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 --
 
 --
--- Indexes for table `studentaccountCombination`
+-- Indexes for table `comment`
 --
-ALTER TABLE `studentaccountCombination`
-  ADD KEY `fk_accId` (`studentID`),
-  ADD KEY `fk_id` (`id`);
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`Id`);
 
 --
 -- Indexes for table `tblclasses`
@@ -254,45 +289,47 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT for table `tblclasses`
 --
 ALTER TABLE `tblclasses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tblresult`
 --
 ALTER TABLE `tblresult`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `tblstudents`
 --
 ALTER TABLE `tblstudents`
   MODIFY `StudentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `tblsubjectcombination`
 --
 ALTER TABLE `tblsubjectcombination`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `tblsubjects`
 --
 ALTER TABLE `tblsubjects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `studentaccountCombination`
---
-ALTER TABLE `studentaccountCombination`
-  ADD CONSTRAINT `studentaccountCombination_ibfk_1` FOREIGN KEY (`studentID`) REFERENCES `tblstudents` (`StudentId`),
-  ADD CONSTRAINT `studentaccountCombination_ibfk_2` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
