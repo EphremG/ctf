@@ -83,9 +83,12 @@ foreach($resultss as $row)
 <p><b>Student Name :</b> <?php echo htmlentities($row->StudentName);?></p>
 <p><b>Student Roll Id :</b> <?php echo htmlentities($row->RollId);?>
 <p><b>Student Class:</b> <?php echo htmlentities($row->ClassName);?>(<?php echo htmlentities($row->Section);?>)
-<?php }
-
-    ?>
+<?php }  ?>
+<div class="panel-body p-20">
+      <th scope="row" colspan="2">Download Result</th>           
+      <td><b><a href="#">Download </a> </b></td>
+       </tr>
+  
                                             </div>
                                             <div class="panel-body p-20">
                                             <table class="table table-hover table-bordered">
@@ -125,16 +128,14 @@ $cnt++;}
 ?>
 <tr>
                                                 <th scope="row" colspan="2">Total Marks</th>
-<td><b><?php echo htmlentities($totlcount); ?></b> out of <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
+<td><b><?php echo htmlentities($totlcount); ?></b> / <b><?php echo htmlentities($outof=($cnt-1)*100); ?></b></td>
                                                         </tr>
 <tr>
                                                 <th scope="row" colspan="2">Percentage</th>           
                                                             <td><b><?php echo  htmlentities($totlcount*(100)/$outof); ?> %</b></td>
                                                              </tr>
 <tr>
-                                                <th scope="row" colspan="2">Download Result</th>           
-                                                            <td><b><a href="download-result.php">Download </a> </b></td>
-                                                             </tr>
+                                          
 
  <?php } else { ?>     
 <div class="alert alert-warning left-icon-alert" role="alert">
@@ -165,14 +166,7 @@ echo htmlentities("Invalid Roll Id");
                                     </div>
                                     <!-- /.col-md-6 -->
 
-                                    <div class="form-group">
-                                                           
-                                                            <div class="col-sm-6">
-                                                               <a href="index.php">Back to Home</a>
-                                                            </div>
-                                                        </div>
-
-                                </div>
+                                                             </div>
                                 <!-- /.row -->
   
                             </div>
