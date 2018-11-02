@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2018 at 02:37 PM
+-- Generation Time: Nov 02, 2018 at 10:20 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -29,19 +29,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comment` (
-  `Id` int(11) NOT NULL,
-  `Name` varchar(20) NOT NULL,
-  `Comment` text NOT NULL,
-  `Date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `id` int(11) NOT NULL,
+  `studentId` int(11) NOT NULL,
+  `comment` varchar(300) NOT NULL,
+  `Name` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`Id`, `Name`, `Comment`, `Date`) VALUES
-(11, 'ephrem', 'testing my comment', '2018-10-08 10:57:54'),
-(14, 'ephrem', 'ahjdsfhjh', '2018-10-08 13:21:19');
 
 -- --------------------------------------------------------
 
@@ -70,8 +62,8 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Gender`, `DOB`, `ClassId`, `RegDate`, `UpdationDate`, `Status`, `username`, `password`) VALUES
 (1, 'Ephrem', '1', 'fstudioceh@gmail.com', 'Male', '1997-04-26', 1, '2018-04-02 14:55:41', '2018-09-26 12:38:04', 1, 'ephrem', 'ephrem'),
-(2, 'Abeni', '2', 'ab3ni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:56:26', NULL, 1, 'abeni', 'abeni'),
-(3, 'Laura', '3', '14ur4@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'laura', 'laura'),
+(2, 'Abeni', '2', 'abeni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:56:26', NULL, 1, 'abeni', 'abeni'),
+(3, 'Laura', '3', 'laura@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'laura', 'laura'),
 (4, 'Annar', '4', 'annar@email.com', 'Male', '1997-03-11', 2, '2018-04-02 15:23:17', NULL, 1, 'annar', 'annar');
 
 -- --------------------------------------------------------
@@ -246,7 +238,14 @@ INSERT INTO `users` (`id`, `username`, `password`, `role`) VALUES
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `studentId` (`studentId`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`StudentId`);
 
 --
 -- Indexes for table `tblclasses`
@@ -292,7 +291,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `tblclasses`
@@ -329,6 +328,16 @@ ALTER TABLE `tblsubjects`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`studentId`) REFERENCES `student` (`StudentId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
