@@ -29,7 +29,7 @@
                                             <li><a href="profile.php?profile=<?php echo base64_encode($_SESSION['sess_studentId']); ?>"><i class="fa fa fa-server"></i> <span>My Profile</span></a></li>
                                             <li><a href="comment.php"><i class="fa fa-bars"></i> <span>Blog</span></a></li>
                                         </ul>
-                                        <li><a href="changepassword.php"><i class="fa fa fa-server"></i> <span>Change Password</span></a></li>       
+                                        <li><a href="#"><i class="fa fa fa-server"></i> <span>Change Password</span></a></li>       
                                     </li>
                             </div>
                             <!-- /.sidebar-nav -->
