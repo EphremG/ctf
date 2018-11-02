@@ -22,4 +22,5 @@ if($_SESSION['user']['role']=='moderator'){
  Your Role is :<?php echo $_SESSION['role'];?></h2>
  
 <div id="logout"><a href="logout.php">Please Click To Logout</a></div>
+ <input type="hidden" name="flag" value="it_is_easy_task">
 </div>
