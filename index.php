@@ -11,7 +11,7 @@ $sql ="SELECT * FROM student WHERE UserName=:uname and Password=:password";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':uname', $uname, PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
-#$query-> bindParam(':role', $role, PDO::PARAM_STR);
+//$query-> bindParam(':role', $role, PDO::PARAM_STR);
 $query-> execute();
 
 if($query->rowCount() > 0)
@@ -21,23 +21,18 @@ if($query->rowCount() > 0)
 	$results=$query->fetchAll(PDO::FETCH_OBJ);
 	foreach($results as $result)
 	{   
-    //$id = $result->id;
+	$studentId = $result->StudentId;
 	$roleId = $result->RollId;
     $un = $result->username;
-	$_SESSION['sess_user_id'] = $id;
+	$_SESSION['sess_studentId'] = $studentId;
 	$_SESSION['sess_username'] = $uname;
-	$_SESSION['ClassRoleId'] = $roleId;
+	$_SESSION['StudentRoleId'] = $roleId;
 	
     }
 	
 	//session_regenerate_id();
-	
-	
-    $_SESSION['sess_userrole'] = $_POST['role'];
-	
-	$sess = $_SESSION['sess_userrole'];
+	$_SESSION['sess_userrole'] = $_POST['role'];
 	session_write_close();
-
 	if( $role == "admin"){
 		header('Location: admindashboard.php');
 	}elseif( $role == "student"){
