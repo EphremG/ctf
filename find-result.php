@@ -46,7 +46,7 @@ if(strlen($_SESSION['alogin'])=="")
 
                                 <form action="result.php" method="get">
                                 	<div class="form-group">
-                                	    <input type="hidden" value="<?php echo $_SESSION['ClassRoleId']; ?>" class="form-control" id="rollid" placeholder="Enter Your Roll Id" autocomplete="off" name="rollid">
+                                	    <input type="hidden" value="<?php echo $_SESSION['StudentRoleId']; ?>" class="form-control" id="rollid" autocomplete="off" name="rollid">
                                 	</div>
                                <div class="form-group">
                                                         <label for="default" class="col-sm-2 control-label">Class</label>
