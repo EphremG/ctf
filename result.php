@@ -57,10 +57,12 @@ if(strlen($_SESSION['alogin'])=="")
                                                 <div class="panel-title">
                                                 <?php
 // code Student Data
-$rollid=$_GET['rollid']; // Student rollid from get method in the url
-$classid=$_GET['class']; 
+//$_SESSION['StudentRoleId'] = The logged in student Roll ID
+$rollid=$_GET['rollid']; // Student rollid from the url, this can be modified from url
+$classid=$_GET['class']; // Semester of the class
+
 //==========================================================
-if ($_SESSION['ClassRoleId'] != $rollid){
+if ($_SESSION['StudentRoleId'] != $rollid){
 	echo "You dont have permission to view this page!";
 }
 else { 
