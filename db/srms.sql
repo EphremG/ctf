@@ -65,7 +65,7 @@ INSERT INTO `student` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Ge
 (2, 'Abeni', '2', 'abeni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:56:26', NULL, 1, 'aben1', 'aben1P455'),
 (3, 'Laura', '3', 'laura@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'laura', 'laura'),
 (4, 'Annar', '4', 'annar@email.com', 'Male', '1997-03-11', 2, '2018-04-02 15:23:17', NULL, 1, 'annar', 'annar');
-(5, 'Abeni', '5', 'abeni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:57:26', NULL, 1, 'student1', '5tudent1p@55'),
+
 
 -- --------------------------------------------------------
 
