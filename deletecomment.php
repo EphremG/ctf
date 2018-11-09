@@ -7,7 +7,7 @@ if(strlen($_SESSION['alogin'])=="")
     header("Location: index.php"); 
     }
 else{
-    $id = $_GET['id'];
+    $id = $_GET['commentid'];
     if($id != ""){
         $sql = "delete from comment where id=:id";
         $deletecomment = $dbh->prepare($sql);
