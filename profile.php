@@ -13,12 +13,12 @@ if(strlen($_SESSION['alogin'])=="")
     else{
 
 $id = base64_decode($_GET['profile']); // Unique ID for Student 
-/* Solution 
-if ($_SESSION['ClassRoleId'] != $id){
+// Solution 
+if ($_SESSION['StudentRoleId'] != $id){
     echo 'You dont have permission to view this Profile!';
 }
 else {
-                // */
+                
 $sql= "select * from student where StudentId=:id";
 $query = $dbh->prepare($sql);
 $query->bindParam(':id',$id,PDO::PARAM_STR);
@@ -42,7 +42,7 @@ foreach($results as $result)
         <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
         <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
         <link rel="stylesheet" href="css/lobipanel/lobipanel.min.css" media="screen" >
-        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > <!-- USED FOR DEMO HELP - YOU CAN REMOVE IT -->
+        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > 
         <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
         <link rel="stylesheet" href="css/main.css" media="screen" >
         <script src="js/modernizr/modernizr.min.js"></script>
@@ -205,5 +205,5 @@ foreach($results as $result)
         <script src="js/DataTables/datatables.min.js"></script>
     </body>
 </html>
-<?php }//}?>
+<?php }}?>
 
