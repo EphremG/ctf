@@ -61,12 +61,15 @@ if(strlen($_SESSION['alogin'])=="")
 $rollid=$_GET['rollid']; // Student rollid from the url, this can be modified from url
 $classid=$_GET['class']; // Semester of the class
 
-//==========================================================
+//Fix me here!	 
+	 
+	 
+/*==========================================================
 if ($_SESSION['StudentRoleId'] != $rollid){
 	echo "You dont have permission to view this page!";
 }
 else { 
-//==========================================================	*/ 
+==========================================================	*/ 
 
 
 $_SESSION['rollid']=$rollid;
@@ -198,4 +201,4 @@ echo htmlentities("Invalid Roll Id");
         <!-- ========== PAGE JS FILES ========== -->
         <script src="js/prism/prism.js"></script>
     </body>
-        </html> <?php }} ?>
+        </html> <?php }//} ?>
