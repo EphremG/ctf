@@ -63,8 +63,9 @@ CREATE TABLE `student` (
 INSERT INTO `student` (`StudentId`, `StudentName`, `RollId`, `StudentEmail`, `Gender`, `DOB`, `ClassId`, `RegDate`, `UpdationDate`, `Status`, `username`, `password`) VALUES
 (1, 'Ephrem', '1', 'fstudioceh@gmail.com', 'Male', '1997-04-26', 1, '2018-04-02 14:55:41', '2018-09-26 12:38:04', 1, 'ephrem', 'ephrem'),
 (2, 'Abeni', '2', 'abeni@gmail.com', 'Male', '1994-04-21', 1, '2018-04-02 14:56:26', NULL, 1, 'abeni', 'abeni'),
-(3, 'Laura', '3', 'laura@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'laura', 'laura'),
+(3, 'student1', '3', 'student@gmail.com', 'Male', '1993-05-22', 1, '2018-04-02 15:22:20', NULL, 1, 'student1', '5tudent1p@55'),
 (4, 'Annar', '4', 'annar@email.com', 'Male', '1997-03-11', 2, '2018-04-02 15:23:17', NULL, 1, 'annar', 'annar');
+
 
 -- --------------------------------------------------------
 
