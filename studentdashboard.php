@@ -61,7 +61,7 @@ else{
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat bg-primary" href="manage-students.php">
+                                        <a class="dashboard-stat bg-primary" href="">
 <?php 
 $sql1 ="SELECT StudentId from tblstudents ";
 $query1 = $dbh -> prepare($sql1);
@@ -79,7 +79,7 @@ $totalstudents=$query1->rowCount();
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat bg-danger" href="manage-subjects.php">
+                                        <a class="dashboard-stat bg-danger" href="">
 <?php 
 $sql ="SELECT id from  tblsubjects ";
 $query = $dbh -> prepare($sql);
@@ -96,7 +96,7 @@ $totalsubjects=$query->rowCount();
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat bg-warning" href="manage-classes.php">
+                                        <a class="dashboard-stat bg-warning" href="">
                                         <?php 
 $sql2 ="SELECT id from  tblclasses ";
 $query2 = $dbh -> prepare($sql2);
@@ -113,7 +113,7 @@ $totalclasses=$query2->rowCount();
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
 
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                                        <a class="dashboard-stat bg-success" href="manage-results.php">
+                                        <a class="dashboard-stat bg-success" href="">
                                         <?php 
 $sql3="SELECT  distinct StudentId from  tblresult ";
 $query3 = $dbh -> prepare($sql3);
