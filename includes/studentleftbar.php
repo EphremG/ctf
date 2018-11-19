@@ -21,7 +21,5 @@
                                         <li><a href="#"> <span>Change Password</span></a></li>       
                                     </li>
                             </div>
-                            <!-- /.sidebar-nav -->
                         </div>
-                        <!-- /.sidebar-content -->
-                    </div>
+</div>
