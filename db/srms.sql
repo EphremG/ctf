@@ -36,7 +36,13 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
-
+INSERT INTO `comment` (`id`, `studentId`, `comment`, `Name`) 
+VALUES ('5', '1', 'sample comment', 'Ephrem'),
+       ('6', '1', 'sample comment', 'Ephrem'),
+       ('7', '2', 'sample comment', 'Abeni'),
+       ('8', '2', 'sample comment', 'Abeni'),
+       ('9', '3', 'sample comment', 'Laura');
+       ('10', '3', 'sample comment', 'Laura');
 --
 -- Table structure for table `student`
 --
