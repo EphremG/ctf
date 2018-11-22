@@ -15,10 +15,8 @@ if(strlen($_SESSION['alogin'])=="")
 $id = base64_decode($_GET['profile']); // Unique ID for Student 
 //Fix me here
 // Solution 
-if ($_SESSION['StudentRoleId'] != $id){
-    echo 'You dont have permission to view this Profile!';
-}
-else {
+//check $_SESSION['StudentRoleId'] and $id are the same
+
                 
 $sql= "select * from student where StudentId=:id";
 $query = $dbh->prepare($sql);
@@ -206,5 +204,5 @@ foreach($results as $result)
         <script src="js/DataTables/datatables.min.js"></script>
     </body>
 </html>
-<?php }}?>
+<?php }?>
 
