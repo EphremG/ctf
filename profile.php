@@ -2,7 +2,7 @@
 <?php
 session_start();
 $stud_id = $_SESSION['sess_studentId'];
-echo $stud_id; 
+#echo $stud_id; 
 $id = 0;
 error_reporting(0);
 include('includes/config.php');
