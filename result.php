@@ -62,10 +62,8 @@ $rollid=$_GET['rollid']; // Student rollid from the url, this can be modified fr
 $classid=$_GET['class']; // Semester of the class
 
 //Fix me here!	Implement access control! 
-	 	 
-/*
-if ($_SESSION['StudentRoleId'] != $rollid)
-*/ 
+// check $_SESSION['StudentRoleId'] and $rollid are the same before displaying student result
+
 
 
 $_SESSION['rollid']=$rollid;
