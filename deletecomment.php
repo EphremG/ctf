@@ -12,12 +12,12 @@ else{
     $id = $_GET['commentid']; // Comment ID from URL in GET Method
    // echo $id;
      if($id != ""){
-        $sql = "delete from comment where id=:id ";
+        //$sql = "delete from comment where id=:id ";
         //solutions
-        //$sql = "delete from comment where id=:id and studentId=:studentId";
+        $sql = "delete from comment where id=:id and studentId=:studentId";
         $deletecomment = $dbh->prepare($sql);
         $deletecomment-> bindParam(':id', $id);
-        //$deletecomment-> bindParam(':studentId', $studentId);
+        $deletecomment-> bindParam(':studentId', $studentId);
         $deletecomment->execute();
         if($deletecomment != 0){
         $msg="Comment removed Succesfully! ";
