@@ -197,4 +197,4 @@ echo htmlentities("Invalid Roll Id");
         <!-- ========== PAGE JS FILES ========== -->
         <script src="js/prism/prism.js"></script>
     </body>
-        </html> <?php }} ?>
+        </html> <?php } ?>
