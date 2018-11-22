@@ -14,9 +14,7 @@ if(strlen($_SESSION['alogin'])=="")
 
 $id = base64_decode($_GET['profile']); // Unique ID for Student 
 //Fix me here
-// Solution 
-//check $_SESSION['StudentRoleId'] and $id are the same
-
+// check $_SESSION['StudentRoleId'] and $id are the same before diplaying student profile info
                 
 $sql= "select * from student where StudentId=:id";
 $query = $dbh->prepare($sql);
@@ -38,15 +36,9 @@ foreach($results as $result)
     	<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin Manage Students</title>
         <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" >
-        <link rel="stylesheet" href="css/font-awesome.min.css" media="screen" >
-        <link rel="stylesheet" href="css/animate-css/animate.min.css" media="screen" >
-        <link rel="stylesheet" href="css/lobipanel/lobipanel.min.css" media="screen" >
-        <link rel="stylesheet" href="css/prism/prism.css" media="screen" > 
-        <link rel="stylesheet" type="text/css" href="js/DataTables/datatables.min.css"/>
         <link rel="stylesheet" href="css/main.css" media="screen" >
-        <script src="js/modernizr/modernizr.min.js"></script>
           <style>
-        .errorWrap {
+.errorWrap {
     padding: 10px;
     margin: 0 0 20px 0;
     background: #fff;
@@ -134,22 +126,6 @@ foreach($results as $result)
     </div> 
     </div>
 </div>  
-    <script>
-              $(function() {
-    $('#profile-image1').on('click', function() {
-        $('#profile-image-upload').click();
-    });
-});       
-              </script> 
-       
-       
-       
-       
-       
-       
-       
-       
-       
    </div>
 </div>
                                                                        
@@ -192,16 +168,6 @@ foreach($results as $result)
         </div>
         <!-- /.main-wrapper -->
 
-        <!-- ========== COMMON JS FILES ========== -->
-        <script src="js/jquery/jquery-2.2.4.min.js"></script>
-        <script src="js/bootstrap/bootstrap.min.js"></script>
-        <script src="js/pace/pace.min.js"></script>
-        <script src="js/lobipanel/lobipanel.min.js"></script>
-        <script src="js/iscroll/iscroll.js"></script>
-
-        <!-- ========== PAGE JS FILES ========== -->
-        <script src="js/prism/prism.js"></script>
-        <script src="js/DataTables/datatables.min.js"></script>
     </body>
 </html>
 <?php }?>
