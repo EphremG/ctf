@@ -61,9 +61,9 @@ if(strlen($_SESSION['alogin'])=="")
 $rollid=$_GET['rollid']; // Student rollid from the url, this can be modified from url
 $classid=$_GET['class']; // Semester of the class
 
-//Fix me here!	 
+//Fix me here!	Implement access control! 
 	 	 
-/*==========================================================
+/*
 if ($_SESSION['StudentRoleId'] != $rollid)
 */ 
 
