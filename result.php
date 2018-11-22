@@ -62,14 +62,10 @@ $rollid=$_GET['rollid']; // Student rollid from the url, this can be modified fr
 $classid=$_GET['class']; // Semester of the class
 
 //Fix me here!	 
-	 
-	 
-//==========================================================
-if ($_SESSION['StudentRoleId'] != $rollid){
-	echo "You dont have permission to view this page!";
-}
-else { 
-//==========================================================	*/ 
+	 	 
+/*==========================================================
+if ($_SESSION['StudentRoleId'] != $rollid)
+*/ 
 
 
 $_SESSION['rollid']=$rollid;
