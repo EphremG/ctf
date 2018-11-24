@@ -2,11 +2,6 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-
-/*echo $_SESSION['sess_user_id'];
-echo $_SESSION['alogin'];
-echo $_SESSION['sess_username'];  */
-
 if(strlen($_SESSION['alogin'])=="")
     {   
     header("Location: index.php"); 
@@ -16,7 +11,6 @@ elseif($_SESSION['sess_userrole']!="student"){
 }
 else{
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,23 +26,18 @@ else{
               <?php include('includes/topbar.php');?>
             <div class="content-wrapper">
                 <div class="content-container">
-
                     <?php include('includes/studentleftbar.php');?>  
-
                     <div class="main-page">
                         <div class="container-fluid">
                             <div class="row page-title-div">
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
                                     <h2 class="title">Dashboard</h2>
-                                  
                                 </div>
                                 <!-- /.col-sm-6 -->
                             </div>
                             <!-- /.row -->
-                      
                         </div>
                         <!-- /.container-fluid -->
-
                         <section class="section">
                             <div class="container-fluid">
                                 <div class="row">
@@ -61,7 +50,6 @@ $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $totalstudents=$query1->rowCount();
 ?>
-
                                             <span class="number counter"><?php echo htmlentities($totalstudents);?></span>
                                             <span class="name">Regd Users</span>
                                             <span class="bg-icon"><i class="fa fa-users"></i></span>
@@ -103,7 +91,6 @@ $totalclasses=$query2->rowCount();
                                         <!-- /.dashboard-stat -->
                                     </div>
                                     <!-- /.col-lg-3 col-md-3 col-sm-6 col-xs-12 -->
-
                                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                                         <a class="dashboard-stat bg-success" href="">
                                         <?php 
@@ -113,7 +100,6 @@ $query3->execute();
 $results3=$query3->fetchAll(PDO::FETCH_OBJ);
 $totalresults=$query3->rowCount();
 ?>
-
                                             <span class="number counter"><?php echo htmlentities($totalresults);?></span>
                                             <span class="name">Results Declared</span>
                                             <span class="bg-icon"><i class="fa fa-file-text"></i></span>
@@ -132,7 +118,7 @@ $totalresults=$query3->rowCount();
                     </div>
                     <!-- /.main-page -->
 
-                    
+               
                 </div>
                 <!-- /.content-container -->
             </div>
