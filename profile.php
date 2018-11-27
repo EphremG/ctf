@@ -2,7 +2,7 @@
 <?php
 session_start();
 $stud_id = $_SESSION['sess_studentId'];
-#echo $stud_id; 
+echo $stud_id; 
 $id = 0;
 error_reporting(0);
 include('includes/config.php');
@@ -13,9 +13,9 @@ if(strlen($_SESSION['alogin'])=="")
     else{
 
 $id = base64_decode($_GET['profile']); // Unique ID for Student 
-//Fix me here
-// check $_SESSION['StudentRoleId'] and $id are the same before diplaying student profile info
-                
+// Fix me here
+// make sure $_SESSION['StudentRoleId'] are $id are the same value   
+ 
 $sql= "select * from student where StudentId=:id";
 $query = $dbh->prepare($sql);
 $query->bindParam(':id',$id,PDO::PARAM_STR);
