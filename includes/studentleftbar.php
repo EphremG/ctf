@@ -1,3 +1,16 @@
+<style>
+@media (max-width:1800px){
+    .left-sidebar {
+        display: block !important;
+        display: table-cell !important;
+    vertical-align: top !important;
+    }
+    .left-sidebar, .main-page, .right-sidebar { */
+        vertical-align: left !important;
+    }
+}
+
+</style>
 <div class="left-sidebar bg-black-300 box-shadow ">
                         <div class="sidebar-content">
                           <div class="sidebar-nav">
