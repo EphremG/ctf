@@ -57,11 +57,11 @@ if(strlen($_SESSION['alogin'])=="")
                                                 <?php
 // code Student Data
 //$_SESSION['StudentRoleId'] = The logged in student Roll ID
-$roleid=$_GET['rollid']; // Student rollid from the url, this can be modified from url
+$rollid=$_GET['rollid']; // Student rollid from the url, this can be modified from url
 $classid=$_GET['class']; // Semester of the class
 
 //Fix me here!	Implement access control! 
-// check $_SESSION['StudentRoleId'] and $roleid are the same before displaying student result
+// check $_SESSION['StudentRoleId'] and $rollid are the same before displaying student result
 
 
 
