@@ -8,4 +8,4 @@ Descriptions:
 
 
 License  
-It is released under the license GPLv2, so it is open source and the code can be examined, modified and distributed by everyone.
+It is open source and the code can be examined, modified and distributed.
